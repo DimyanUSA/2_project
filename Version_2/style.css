@@ -1,0 +1,448 @@
+/* ============================================================
+   АТИСАФ — style.css
+   Концепция «Private Intellectual Club» | Luxury Depth System
+   ============================================================ */
+
+:root {
+    --bg:             #0B0B0D;
+    --bg-alt:         #141418;
+    --text:           #F2F2F2;
+    --text-secondary: #B8B8C2;
+    --text-muted:     #8C8C96;
+    --accent:         #E5E5E8;
+    --muted:          rgba(140, 140, 150, 0.45);
+    --line:           #22222A;
+    --serif:          'Cormorant Garant', Georgia, serif;
+    --sans:           'Manrope', system-ui, sans-serif;
+}
+
+/* ── RESET ─────────────────────────────────── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── SCROLLBAR ──────────────────────────────── */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--line); }
+
+/* ── LAYOUT ─────────────────────────────────── */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 48px;
+}
+
+.section {
+    padding: 160px 0;
+}
+
+/* ── SECTION DIVIDERS ───────────────────────── */
+section + section {
+    border-top: 1px solid var(--line);
+}
+
+/* ── SECTION BACKGROUNDS ────────────────────── */
+#hero           { background-color: #0B0B0D; }
+#what           { background-color: #141418; }
+#for-whom       { background-color: #1A1A1F; }
+#depth          { background-color: #09090B; }
+#formats        { background-color: #141418; }
+#recommendation { background-color: #141418; }
+#offering       { background-color: #16161C; }
+#final          { background-color: #0B0B0D; }
+
+.section-alt {
+    background-color: inherit;
+}
+
+/* ── SECTION LABEL ──────────────────────────── */
+.section-label {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 56px;
+}
+
+/* ── PROSE TEXT ─────────────────────────────── */
+.prose p {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+}
+
+.prose p:last-child {
+    margin-bottom: 0;
+}
+
+/* Contrast pairs */
+.stmt-pair {
+    color: var(--text) !important;
+}
+
+/* Triple rhythm in italics */
+.stmt-triple {
+    font-family: var(--serif) !important;
+    font-style: italic !important;
+    font-size: 22px !important;
+    line-height: 1.75 !important;
+    color: var(--text) !important;
+    letter-spacing: 0.01em;
+}
+
+/* Key declarations */
+.stmt-key {
+    font-family: var(--serif) !important;
+    font-style: italic !important;
+    font-size: 20px !important;
+    line-height: 1.7 !important;
+    color: var(--text) !important;
+    letter-spacing: 0.02em;
+}
+
+/* ══════════════════════════════════════════════
+   HERO
+══════════════════════════════════════════════ */
+#hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+#particles-canvas {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    padding: 80px 48px;
+}
+
+.hero-brand {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(54px, 13vw, 112px);
+    letter-spacing: 0.42em;
+    color: var(--text);
+    margin-bottom: 36px;
+    line-height: 1;
+}
+
+.hero-tagline {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(11px, 1.6vw, 14px);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 68px;
+}
+
+.hero-body {
+    margin-bottom: 72px;
+}
+
+.hero-body p {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--text-secondary);
+    margin-bottom: 18px;
+    line-height: 1.9;
+}
+
+.hero-key {
+    font-family: var(--serif) !important;
+    font-style: italic !important;
+    font-size: 22px !important;
+    color: var(--text) !important;
+    margin-top: 44px !important;
+    letter-spacing: 0.04em;
+}
+
+/* ══════════════════════════════════════════════
+   CTA BUTTON — WHISPER (Hero / Final)
+══════════════════════════════════════════════ */
+.btn-cta {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text);
+    text-decoration: none;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(229, 229, 232, 0.3);
+    transition: border-color 0.5s ease;
+    cursor: pointer;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+}
+
+.btn-cta:hover {
+    border-bottom-color: var(--accent);
+}
+
+/* ══════════════════════════════════════════════
+   CTA BUTTON — PROTOCOL (Form submit)
+══════════════════════════════════════════════ */
+.btn-protocol {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #E5E5E8;
+    background: transparent;
+    border: 1px solid #2A2A32;
+    padding: 16px 28px;
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    outline: none;
+}
+
+.btn-protocol:hover {
+    background-color: #1E1E24;
+    color: #FFFFFF;
+    border-color: #3A3A44;
+}
+
+/* ══════════════════════════════════════════════
+   FORMATS
+══════════════════════════════════════════════ */
+.formats-list {
+    margin-bottom: 48px;
+}
+
+.format-item {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.format-item:first-child {
+    border-top: 1px solid var(--line);
+}
+
+.format-name {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    margin-bottom: 16px;
+}
+
+.format-desc {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-secondary);
+}
+
+.formats-note {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    color: var(--text-muted);
+}
+
+/* ══════════════════════════════════════════════
+   FORM
+══════════════════════════════════════════════ */
+.form-intro {
+    margin-bottom: 56px;
+}
+
+#access-form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.field label {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+.field input,
+.field textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--line);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 300;
+    padding: 14px 0;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.35s ease;
+    caret-color: var(--accent);
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.field input:focus,
+.field textarea:focus {
+    border-bottom-color: #FFFFFF;
+}
+
+.field textarea {
+    resize: none;
+    line-height: 1.75;
+    min-height: 80px;
+}
+
+.field-submit {
+    padding-top: 8px;
+}
+
+.form-success {
+    margin-top: 56px;
+    padding-top: 56px;
+    border-top: 1px solid var(--line);
+}
+
+.form-success p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.7;
+    color: var(--text);
+    opacity: 0.75;
+}
+
+/* ══════════════════════════════════════════════
+   FINAL SECTION
+══════════════════════════════════════════════ */
+#final {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 160px 48px;
+}
+
+.final-inner {
+    max-width: 580px;
+}
+
+.final-title {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(34px, 6vw, 60px);
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    margin-bottom: 44px;
+    line-height: 1.15;
+}
+
+.final-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--text-secondary);
+    line-height: 1.9;
+    margin-bottom: 44px;
+}
+
+.final-note {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 19px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 60px;
+}
+
+/* ══════════════════════════════════════════════
+   FADE-IN ANIMATION
+══════════════════════════════════════════════ */
+.fade-in {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.delay-1 { transition-delay: 0.25s; }
+.fade-in.delay-2 { transition-delay: 0.5s; }
+.fade-in.delay-3 { transition-delay: 0.75s; }
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════ */
+@media (max-width: 640px) {
+    .section {
+        padding: 100px 0;
+    }
+    .container {
+        padding: 0 24px;
+    }
+    #final {
+        padding: 100px 24px;
+    }
+    .hero-inner {
+        padding: 80px 24px;
+    }
+    .hero-brand {
+        letter-spacing: 0.28em;
+    }
+    .stmt-triple {
+        font-size: 19px !important;
+    }
+    .stmt-key {
+        font-size: 18px !important;
+    }
+}
