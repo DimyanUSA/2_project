@@ -1,12 +1,12 @@
 const translations = {
   en: {
     pageTitle: "Quantum Field Mentorship | Akashic Records & Consciousness Work",
-    metaDesc: "Mentorship in working with the quantum field and Akashic field. A private space for those ready for irreversible shifts in perception, decision-making, and life direction.",
+    metaDesc: "Mentorship in working with the quantum field and Akashic Records. A private space for those ready for irreversible shifts in perception, decision-making, and life direction.",
     ogTitle: "Mentorship in the Quantum Field",
     ogDesc: "A private space for working with perception, decision-making, and the deeper structure of reality.",
 
     heroBrand: "ATISAF",
-    heroTagline: "Mentorship in working with the quantum field, the Akashic field, and processes of consciousness transformation.",
+    heroTagline: "Mentorship in working with the quantum field, the Akashic Records, and processes of consciousness transformation.",
     heroBody1: "This is not therapy.<br>And not a conventional path of personal development.",
     heroBody2: "It is a guided interaction with a field that reshapes perception, decision-making, and the scale of your presence in the world.",
     heroKey: "The knowledge accessed here is <em>not reversible</em>.",
@@ -14,7 +14,7 @@ const translations = {
 
     label1: "What Happens Here",
     s1p1: "This is mentorship in working with the quantum field — a layer of reality where causes emerge before outcomes appear.",
-    s1p2: "Through engagement with the Akashic field, information beyond linear time can be accessed and interpreted.",
+    s1p2: "Through engagement with the Akashic Records, information beyond linear time can be accessed and interpreted.",
     s1p3: "This reveals potential trajectories of development and moments of precise strategic choice.",
     s1p4: "This is not psychological support and not a practice for balance or comfort.",
     s1p5: "It is work with the deeper structure of reality itself.",
@@ -48,7 +48,7 @@ const translations = {
     format2name: "Closed Group Immersions",
     format2desc: "Work within a shared field. Alignment of participants and deeper awareness of possible trajectories and strategic choices.",
     format3name: "Private Sessions",
-    format3desc: "Accessing and translating information from the Akashic field, working with underlying patterns of reality.",
+    format3desc: "Accessing and translating information from the Akashic Records, working with underlying patterns of reality.",
     formatsNote: "Access is offered based on recommendation and readiness.",
 
     label5: "Access by Recommendation",
