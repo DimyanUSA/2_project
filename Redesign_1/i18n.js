@@ -94,6 +94,18 @@ const translations = {
     finalCta: "Request access →",
     authorityLine1: "Interaction occurs within a limited field of attention.",
     authorityLine2: "The number of active processes at any given time remains intentionally restricted.",
+    orientToggle: "Orientation (optional)",
+    orient1: "The terms used here are not metaphorical.",
+    orient2: "The quantum field refers to a layer of reality where patterns form before they become observable events.",
+    orient3: "The Akashic Records are approached as a structure through which information beyond linear time may be accessed.",
+    orient4: "Understanding is not required prior to interaction. Clarity emerges within the process itself.",
+    orientDeeperBtn: "Deeper layer →",
+    deeper1: "Access to this level of work is not defined by interest. It is defined by coherence between perception, responsibility, and action.",
+    deeper2: "Information is not received — it is recognized. Recognition depends on the structure of the observer.",
+    deeper3: "What appears as complexity is often a limitation of the current configuration.",
+    deeper4: "When the configuration shifts, clarity does not increase — it becomes immediate.",
+    deeper5: "At this level, questions are not answered. They dissolve as the structure that formed them is no longer present.",
+    deeper6: "If this resonates, no further explanation is required.",
   },
 
   ru: {
@@ -191,6 +203,18 @@ const translations = {
     finalCta: "Подать запрос на допуск →",
     authorityLine1: "Взаимодействие ведётся с ограниченным числом учеников.",
     authorityLine2: "Это не ограничение возможностей, а распределение внимания.",
+    orientToggle: "Ориентация (необязательно)",
+    orient1: "Термины, используемые здесь, не являются метафорами.",
+    orient2: "Квантовое поле — это уровень реальности, где формируются причины до проявления событий.",
+    orient3: "Хроники Акаши рассматриваются как структура, через которую возможен доступ к информации вне линейного времени.",
+    orient4: "Понимание не требуется до начала взаимодействия. Ясность возникает в процессе.",
+    orientDeeperBtn: "Более глубокий уровень →",
+    deeper1: "Доступ к этому уровню работы определяется не интересом, а согласованностью восприятия, ответственности и действия.",
+    deeper2: "Информация не передаётся — она распознаётся. Распознавание зависит от структуры воспринимающего.",
+    deeper3: "То, что воспринимается как сложность, чаще является ограничением текущей конфигурации.",
+    deeper4: "При изменении конфигурации ясность не увеличивается — она возникает мгновенно.",
+    deeper5: "На этом уровне вопросы не получают ответы. Они исчезают вместе со структурой, которая их создаёт.",
+    deeper6: "Если это откликается — дальнейшие объяснения не требуются.",
   }
 };
 

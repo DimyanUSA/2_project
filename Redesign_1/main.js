@@ -165,3 +165,24 @@
         }
     });
 })();
+
+
+/* ── ORIENTATION TOGGLE ──────────────────────────────────────── */
+(function () {
+    const orientToggle = document.querySelector('.orientation-toggle');
+    const orientBlock  = document.querySelector('.orientation-block');
+    const deeperToggle = document.querySelector('.orientation-deeper-toggle');
+    const deeperBlock  = document.querySelector('.orientation-deeper');
+
+    if (orientToggle) {
+        orientToggle.addEventListener('click', () => {
+            orientBlock.classList.toggle('open');
+        });
+    }
+
+    if (deeperToggle) {
+        deeperToggle.addEventListener('click', () => {
+            deeperBlock.classList.toggle('open');
+        });
+    }
+})();
