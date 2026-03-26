@@ -92,6 +92,8 @@ const translations = {
     finalExtra: "Not everyone recognizes the moment when it begins.",
     finalNote: "The knowledge is already present.<br>Access begins with a request.",
     finalCta: "Request access →",
+    authorityLine1: "Interaction occurs within a limited field of attention.",
+    authorityLine2: "The number of active processes at any given time remains intentionally restricted.",
   },
 
   ru: {
@@ -187,6 +189,8 @@ const translations = {
     finalExtra: "Не каждый замечает момент, когда это начинается.",
     finalNote: "Знание уже здесь.<br>Допуск — по запросу.",
     finalCta: "Подать запрос на допуск →",
+    authorityLine1: "Взаимодействие происходит в ограниченном поле внимания.",
+    authorityLine2: "Количество активных процессов в каждый момент намеренно ограничено.",
   }
 };
 
