@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://atisaf.com/sitemap.xml
