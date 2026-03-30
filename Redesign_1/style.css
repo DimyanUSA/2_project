@@ -113,12 +113,12 @@ body {
 ══════════════════════════════════════════════ */
 #hero {
     position: relative;
-    width: 100%;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    text-align: center;
 }
 
 #particles-canvas {
@@ -129,9 +129,9 @@ body {
 
 .hero-inner {
     position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 80px 24px;
+    z-index: 1;
+    max-width: 640px;
+    padding: 80px 40px;
 }
 
 .hero-brand {
@@ -711,15 +711,4 @@ button.btn-cta {
   left: 28px;
   z-index: 100;
   opacity: 0.7;
-  transition: opacity 0.3s;
-}
-
-.logo-header:hover {
-  opacity: 1;
-}
-
-.logo-seal {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 32px;
 }
