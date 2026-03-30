@@ -113,12 +113,12 @@ body {
 ══════════════════════════════════════════════ */
 #hero {
     position: relative;
+    width: 100%;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    text-align: center;
 }
 
 #particles-canvas {
@@ -128,6 +128,8 @@ body {
 }
 
 .hero-inner {
+    position: relative;
+    z-index: 2;
     width: 100%;
     max-width: 760px;
     margin: 0 auto;
@@ -135,9 +137,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    z-index: 1;
-    padding: 80px 40px;
+    padding: 80px 24px;
 }
 
 .hero-brand {
