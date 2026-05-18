@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A reflection on visible and non-visible layers of decision-making, uncertainty, and informational structures beyond linear analysis.">
+    <link rel="canonical" href="https://atisaf.com/notes/akashic-field-decision/">
+    <meta property="og:title" content="On the Akashic Field as a Layer of Decision | ATISAF Field Notes">
+    <meta property="og:url" content="https://atisaf.com/notes/akashic-field-decision/">
+    <title>On the Akashic Field as a Layer of Decision | ATISAF Field Notes</title>
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:     #0A0906;
+            --bg-alt: #0F0D0B;
+            --text:   #F0EAE0;
+            --accent: #A08B5A;
+            --muted:  rgba(240, 234, 224, 0.4);
+            --line:   #2A2520;
+            --serif:  'Cormorant Garant', Georgia, serif;
+            --sans:   'Inter', system-ui, sans-serif;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--sans);
+            font-size: 16px;
+            line-height: 1.7;
+            font-weight: 300;
+            min-height: 100vh;
+        }
+        .logo-fixed {
+            position: fixed;
+            top: 24px;
+            left: 28px;
+            z-index: 100;
+            opacity: 0.7;
+            text-decoration: none;
+        }
+        .logo-fixed svg { width: 36px; height: 56px; }
+        .nav-back {
+            position: fixed;
+            top: 28px;
+            right: 32px;
+            font-family: var(--sans);
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .nav-back:hover { color: var(--text); }
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 120px 32px 100px;
+        }
+        .breadcrumb {
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 48px;
+        }
+        .breadcrumb a {
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .breadcrumb a:hover { color: var(--accent); }
+        .breadcrumb span { margin: 0 8px; opacity: 0.4; }
+        .article-category {
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        .article-title {
+            font-family: var(--serif);
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            font-weight: 300;
+            line-height: 1.2;
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+        .article-meta {
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--muted);
+            opacity: 0.6;
+        }
+        .divider {
+            border: none;
+            border-top: 1px solid var(--line);
+            margin: 40px 0;
+        }
+        .article-body {
+            font-family: var(--serif);
+            font-size: clamp(1.05rem, 2vw, 1.2rem);
+            line-height: 1.9;
+            color: var(--text);
+        }
+        .article-body p { margin-bottom: 1.5em; }
+        .article-body p:last-child { margin-bottom: 0; }
+        .related {
+            margin-top: 72px;
+            padding-top: 40px;
+            border-top: 1px solid var(--line);
+        }
+        .related-label {
+            font-size: 9px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 24px;
+        }
+        .related-link {
+            display: block;
+            font-family: var(--serif);
+            font-size: 1.1rem;
+            color: var(--muted);
+            text-decoration: none;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--line);
+            transition: color 0.3s;
+        }
+        .related-link:hover { color: var(--text); }
+        .article-footer {
+            margin-top: 64px;
+            text-align: center;
+        }
+        .footer-link {
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-link:hover { color: var(--text); }
+        .source-note {
+            font-size: 9px;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            opacity: 0.4;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<a href="https://atisaf.com/" class="logo-fixed" aria-label="ATISAF">
+    <svg viewBox="0 0 92 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polyline points="4,76 88,40 4,4" stroke="#A08B5A" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="46" cy="40" r="2.5" fill="#A08B5A"/>
+    </svg>
+</a>
+
+<a href="/notes/" class="nav-back">← Field Notes</a>
+
+<div class="container">
+
+    <div class="breadcrumb">
+        <a href="https://atisaf.com/">ATISAF</a>
+        <span>/</span>
+        <a href="/notes/">Field Notes</a>
+        <span>/</span>
+        Decision Making
+    </div>
+
+    <header style="margin-bottom:48px;">
+        <p class="article-category">Decision Making</p>
+        <h1 class="article-title">On the Akashic Field as a Layer of Decision</h1>
+        <p class="article-meta">7 min read · ATISAF Field Notes</p>
+    </header>
+
+    <hr class="divider">
+
+    <article class="article-body">
+        <p>Every decision has a visible layer and a non-visible one.</p>
+
+        <p>The visible layer includes analysis, experience, information, and advice.
+        The non-visible layer concerns structure — the underlying patterns that influence
+        which outcomes become available at a given moment.</p>
+
+        <p>Most decisions are made from the visible layer alone.
+        This is not a mistake. It is a limitation of perception.</p>
+
+        <p>The Akashic field may be understood as access to informational patterns
+        that precede visible events.
+        Such access does not remove uncertainty.
+        It changes the level from which uncertainty is perceived.</p>
+
+        <p>Decisions informed by field-level awareness often carry a different quality —
+        not greater certainty, but greater precision.</p>
+
+        <p>The difference is rarely obvious in the moment.
+        It becomes visible through outcomes.</p>
+    </article>
+
+    <div class="related">
+        <p class="related-label">Field Notes</p>
+        <a href="/notes/" class="related-link">← All Field Notes</a>
+    </div>
+
+    <footer class="article-footer">
+        <a href="https://atisaf.com/" class="footer-link">← Return to ATISAF</a>
+        <p class="source-note">ATISAF Field Notes</p>
+    </footer>
+
+</div>
+</body>
+</html>
