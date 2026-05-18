@@ -15,10 +15,9 @@
     <style>
         :root {
             --bg:     #0A0906;
-            --bg-alt: #0F0D0B;
             --text:   #F0EAE0;
             --accent: #A08B5A;
-            --muted:  rgba(240, 234, 224, 0.4);
+            --muted:  rgba(240,234,224,0.4);
             --line:   #2A2520;
             --serif:  "Cormorant Garant", Georgia, serif;
             --sans:   "Inter", system-ui, sans-serif;
@@ -42,19 +41,29 @@
             text-decoration: none;
         }
         .logo-fixed svg { width: 36px; height: 56px; }
-        .nav-back {
+        .lang-switch {
             position: fixed;
             top: 28px;
             right: 32px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            z-index: 100;
+        }
+        .lang-btn {
+            background: none;
+            border: none;
             font-family: "Inter", system-ui, sans-serif;
             font-size: 11px;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: rgba(240,234,224,0.4);
-            text-decoration: none;
+            color: rgba(240,234,224,0.35);
+            cursor: pointer;
+            padding: 0;
             transition: color 0.3s;
         }
-        .nav-back:hover { color: #F0EAE0; }
+        .lang-btn.active, .lang-btn:hover { color: #F0EAE0; }
+        .lang-sep { color: rgba(240,234,224,0.2); font-size: 11px; }
         .container {
             max-width: 680px;
             margin: 0 auto;
@@ -150,29 +159,75 @@
     </svg>
 </a>
 
-<a href="https://atisaf.com/" class="nav-back">← atisaf.com</a>
+<div class="lang-switch">
+    <button class="lang-btn" data-lang="en">EN</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" data-lang="ru">RU</button>
+</div>
 
 <div class="container">
     <header style="margin-bottom:64px;">
         <p class="page-label">ATISAF</p>
-        <h1 class="page-title">Field Notes</h1>
-        <p class="page-desc">Observations on consciousness, decision-making, perception, and structural reality. Published irregularly.</p>
+        <h1 class="page-title" data-i18n="pageTitle">Field Notes</h1>
+        <p class="page-desc" data-i18n="pageDesc">Observations on consciousness, decision-making, perception, and structural reality. Published irregularly.</p>
     </header>
 
     <hr class="divider">
 
     <section class="category-section">
-        <p class="category-label">Decision Making</p>
+        <p class="category-label" data-i18n="cat1">Decision Making</p>
         <a href="/notes/akashic-field-decision/" class="note-entry">
-            <div class="note-title">On the Akashic Field as a Layer of Decision</div>
-            <div class="note-excerpt">Every decision has a visible layer and a non-visible one. The non-visible layer concerns structure — the underlying patterns that influence which outcomes become available.</div>
-            <div class="note-meta">7 min read</div>
+            <div class="note-title" data-i18n="note1title">On the Akashic Field as a Layer of Decision</div>
+            <div class="note-excerpt" data-i18n="note1excerpt">Every decision has a visible layer and a non-visible one. The non-visible layer concerns structure — the underlying patterns that influence which outcomes become available.</div>
+            <div class="note-meta" data-i18n="note1meta">7 min read</div>
         </a>
     </section>
 
     <footer class="page-footer">
-        <a href="https://atisaf.com/" class="footer-link">← Return to ATISAF</a>
+        <a href="https://atisaf.com/" class="footer-link" data-i18n="backHome">← Return to ATISAF</a>
     </footer>
 </div>
+
+<script>
+const t = {
+    en: {
+        pageTitle: "Field Notes",
+        pageDesc: "Observations on consciousness, decision-making, perception, and structural reality. Published irregularly.",
+        cat1: "Decision Making",
+        note1title: "On the Akashic Field as a Layer of Decision",
+        note1excerpt: "Every decision has a visible layer and a non-visible one. The non-visible layer concerns structure — the underlying patterns that influence which outcomes become available.",
+        note1meta: "7 min read",
+        backHome: "← Return to ATISAF"
+    },
+    ru: {
+        pageTitle: "Записи поля",
+        pageDesc: "Наблюдения о сознании, принятии решений, восприятии и структуре реальности. Публикуется нерегулярно.",
+        cat1: "Принятие решений",
+        note1title: "Поле Акаши как уровень принятия решений",
+        note1excerpt: "У каждого решения есть видимый и невидимый уровень. Невидимый уровень касается структуры — паттернов, влияющих на то, какие исходы становятся доступными.",
+        note1meta: "7 мин чтения",
+        backHome: "← Вернуться на ATISAF"
+    }
+};
+
+function applyLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (t[lang] && t[lang][key]) el.innerHTML = t[lang][key];
+    });
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.lang === lang);
+    });
+    localStorage.setItem("atisaf-lang", lang);
+}
+
+const savedLang = localStorage.getItem("atisaf-lang") || "en";
+applyLang(savedLang);
+
+document.querySelectorAll(".lang-btn").forEach(btn => {
+    btn.addEventListener("click", () => applyLang(btn.dataset.lang));
+});
+</script>
 </body>
 </html>

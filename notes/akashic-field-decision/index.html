@@ -15,19 +15,18 @@
     <style>
         :root {
             --bg:     #0A0906;
-            --bg-alt: #0F0D0B;
             --text:   #F0EAE0;
             --accent: #A08B5A;
-            --muted:  rgba(240, 234, 224, 0.4);
+            --muted:  rgba(240,234,224,0.4);
             --line:   #2A2520;
-            --serif:  'Cormorant Garant', Georgia, serif;
-            --sans:   'Inter', system-ui, sans-serif;
+            --serif:  "Cormorant Garant", Georgia, serif;
+            --sans:   "Inter", system-ui, sans-serif;
         }
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { background-color: #0A0906; }
         body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: var(--sans);
+            color: #F0EAE0;
+            font-family: "Inter", system-ui, sans-serif;
             font-size: 16px;
             line-height: 1.7;
             font-weight: 300;
@@ -42,19 +41,29 @@
             text-decoration: none;
         }
         .logo-fixed svg { width: 36px; height: 56px; }
-        .nav-back {
+        .lang-switch {
             position: fixed;
             top: 28px;
             right: 32px;
-            font-family: var(--sans);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            z-index: 100;
+        }
+        .lang-btn {
+            background: none;
+            border: none;
+            font-family: "Inter", system-ui, sans-serif;
             font-size: 11px;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--muted);
-            text-decoration: none;
+            color: rgba(240,234,224,0.35);
+            cursor: pointer;
+            padding: 0;
             transition: color 0.3s;
         }
-        .nav-back:hover { color: var(--text); }
+        .lang-btn.active, .lang-btn:hover { color: #F0EAE0; }
+        .lang-sep { color: rgba(240,234,224,0.2); font-size: 11px; }
         .container {
             max-width: 640px;
             margin: 0 auto;
@@ -64,74 +73,74 @@
             font-size: 10px;
             letter-spacing: 0.18em;
             text-transform: uppercase;
-            color: var(--muted);
+            color: rgba(240,234,224,0.4);
             margin-bottom: 48px;
         }
         .breadcrumb a {
-            color: var(--muted);
+            color: rgba(240,234,224,0.4);
             text-decoration: none;
             transition: color 0.3s;
         }
-        .breadcrumb a:hover { color: var(--accent); }
+        .breadcrumb a:hover { color: #A08B5A; }
         .breadcrumb span { margin: 0 8px; opacity: 0.4; }
         .article-category {
             font-size: 10px;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: var(--accent);
+            color: #A08B5A;
             margin-bottom: 20px;
         }
         .article-title {
-            font-family: var(--serif);
+            font-family: "Cormorant Garant", Georgia, serif;
             font-size: clamp(2rem, 4.5vw, 3rem);
             font-weight: 300;
             line-height: 1.2;
-            color: var(--text);
+            color: #F0EAE0;
             margin-bottom: 20px;
         }
         .article-meta {
             font-size: 10px;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--muted);
+            color: rgba(240,234,224,0.4);
             opacity: 0.6;
         }
         .divider {
             border: none;
-            border-top: 1px solid var(--line);
+            border-top: 1px solid #2A2520;
             margin: 40px 0;
         }
         .article-body {
-            font-family: var(--serif);
+            font-family: "Cormorant Garant", Georgia, serif;
             font-size: clamp(1.05rem, 2vw, 1.2rem);
             line-height: 1.9;
-            color: var(--text);
+            color: #F0EAE0;
         }
         .article-body p { margin-bottom: 1.5em; }
         .article-body p:last-child { margin-bottom: 0; }
         .related {
             margin-top: 72px;
             padding-top: 40px;
-            border-top: 1px solid var(--line);
+            border-top: 1px solid #2A2520;
         }
         .related-label {
             font-size: 9px;
             letter-spacing: 0.25em;
             text-transform: uppercase;
-            color: var(--accent);
+            color: #A08B5A;
             margin-bottom: 24px;
         }
         .related-link {
             display: block;
-            font-family: var(--serif);
+            font-family: "Cormorant Garant", Georgia, serif;
             font-size: 1.1rem;
-            color: var(--muted);
+            color: rgba(240,234,224,0.4);
             text-decoration: none;
             padding: 12px 0;
-            border-bottom: 1px solid var(--line);
+            border-bottom: 1px solid #2A2520;
             transition: color 0.3s;
         }
-        .related-link:hover { color: var(--text); }
+        .related-link:hover { color: #F0EAE0; }
         .article-footer {
             margin-top: 64px;
             text-align: center;
@@ -140,15 +149,15 @@
             font-size: 10px;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: var(--muted);
+            color: rgba(240,234,224,0.4);
             text-decoration: none;
             transition: color 0.3s;
         }
-        .footer-link:hover { color: var(--text); }
+        .footer-link:hover { color: #F0EAE0; }
         .source-note {
             font-size: 9px;
             letter-spacing: 0.1em;
-            color: var(--muted);
+            color: rgba(240,234,224,0.4);
             opacity: 0.4;
             margin-top: 16px;
         }
@@ -163,58 +172,116 @@
     </svg>
 </a>
 
-<a href="/notes/" class="nav-back">← Field Notes</a>
+<div class="lang-switch">
+    <button class="lang-btn" data-lang="en">EN</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" data-lang="ru">RU</button>
+</div>
 
 <div class="container">
 
     <div class="breadcrumb">
         <a href="https://atisaf.com/">ATISAF</a>
         <span>/</span>
-        <a href="/notes/">Field Notes</a>
+        <a href="/notes/" data-i18n="breadNotes">Field Notes</a>
         <span>/</span>
-        Decision Making
+        <span data-i18n="breadCat">Decision Making</span>
     </div>
 
     <header style="margin-bottom:48px;">
-        <p class="article-category">Decision Making</p>
-        <h1 class="article-title">On the Akashic Field as a Layer of Decision</h1>
-        <p class="article-meta">7 min read · ATISAF Field Notes</p>
+        <p class="article-category" data-i18n="category">Decision Making</p>
+        <h1 class="article-title" data-i18n="articleTitle">On the Akashic Field as a Layer of Decision</h1>
+        <p class="article-meta" data-i18n="articleMeta">7 min read · ATISAF Field Notes</p>
     </header>
 
     <hr class="divider">
 
-    <article class="article-body">
+    <article class="article-body" id="article-body">
         <p>Every decision has a visible layer and a non-visible one.</p>
-
-        <p>The visible layer includes analysis, experience, information, and advice.
-        The non-visible layer concerns structure — the underlying patterns that influence
-        which outcomes become available at a given moment.</p>
-
-        <p>Most decisions are made from the visible layer alone.
-        This is not a mistake. It is a limitation of perception.</p>
-
-        <p>The Akashic field may be understood as access to informational patterns
-        that precede visible events.
-        Such access does not remove uncertainty.
-        It changes the level from which uncertainty is perceived.</p>
-
-        <p>Decisions informed by field-level awareness often carry a different quality —
-        not greater certainty, but greater precision.</p>
-
-        <p>The difference is rarely obvious in the moment.
-        It becomes visible through outcomes.</p>
+        <p>The visible layer includes analysis, experience, information, and advice. The non-visible layer concerns structure — the underlying patterns that influence which outcomes become available at a given moment.</p>
+        <p>Most decisions are made from the visible layer alone. This is not a mistake. It is a limitation of perception.</p>
+        <p>The Akashic field may be understood as access to informational patterns that precede visible events. Such access does not remove uncertainty. It changes the level from which uncertainty is perceived.</p>
+        <p>Decisions informed by field-level awareness often carry a different quality — not greater certainty, but greater precision.</p>
+        <p>The difference is rarely obvious in the moment. It becomes visible through outcomes.</p>
     </article>
 
     <div class="related">
-        <p class="related-label">Field Notes</p>
-        <a href="/notes/" class="related-link">← All Field Notes</a>
+        <p class="related-label" data-i18n="relatedLabel">Field Notes</p>
+        <a href="/notes/" class="related-link" data-i18n="relatedAll">← All Field Notes</a>
     </div>
 
     <footer class="article-footer">
-        <a href="https://atisaf.com/" class="footer-link">← Return to ATISAF</a>
-        <p class="source-note">ATISAF Field Notes</p>
+        <a href="https://atisaf.com/" class="footer-link" data-i18n="backHome">← Return to ATISAF</a>
+        <p class="source-note" data-i18n="sourceNote">ATISAF Field Notes</p>
     </footer>
 
 </div>
+
+<script>
+const t = {
+    en: {
+        breadNotes: "Field Notes",
+        breadCat: "Decision Making",
+        category: "Decision Making",
+        articleTitle: "On the Akashic Field as a Layer of Decision",
+        articleMeta: "7 min read · ATISAF Field Notes",
+        relatedLabel: "Field Notes",
+        relatedAll: "← All Field Notes",
+        backHome: "← Return to ATISAF",
+        sourceNote: "ATISAF Field Notes"
+    },
+    ru: {
+        breadNotes: "Записи поля",
+        breadCat: "Принятие решений",
+        category: "Принятие решений",
+        articleTitle: "Поле Акаши как уровень принятия решений",
+        articleMeta: "7 мин чтения · ATISAF Записи поля",
+        relatedLabel: "Записи поля",
+        relatedAll: "← Все записи поля",
+        backHome: "← Вернуться на ATISAF",
+        sourceNote: "ATISAF Записи поля"
+    }
+};
+
+const bodyEN = [
+    "Every decision has a visible layer and a non-visible one.",
+    "The visible layer includes analysis, experience, information, and advice. The non-visible layer concerns structure — the underlying patterns that influence which outcomes become available at a given moment.",
+    "Most decisions are made from the visible layer alone. This is not a mistake. It is a limitation of perception.",
+    "The Akashic field may be understood as access to informational patterns that precede visible events. Such access does not remove uncertainty. It changes the level from which uncertainty is perceived.",
+    "Decisions informed by field-level awareness often carry a different quality — not greater certainty, but greater precision.",
+    "The difference is rarely obvious in the moment. It becomes visible through outcomes."
+];
+
+const bodyRU = [
+    "У каждого решения есть видимый и невидимый уровень.",
+    "Видимый уровень включает анализ, опыт, информацию и советы. Невидимый уровень касается структуры — паттернов, влияющих на то, какие исходы становятся доступными в конкретный момент.",
+    "Большинство решений принимается только с видимого уровня. Это не ошибка. Это ограничение восприятия.",
+    "Поле Акаши можно понять как доступ к информационным паттернам, которые предшествуют видимым событиям. Такой доступ не устраняет неопределённость. Он меняет уровень, с которого неопределённость воспринимается.",
+    "Решения, принятые с опорой на осознанность уровня поля, часто обладают иным качеством — не большей уверенностью, а большей точностью.",
+    "Разница редко очевидна в момент. Она становится видна через результаты."
+];
+
+function applyLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (t[lang] && t[lang][key]) el.innerHTML = t[lang][key];
+    });
+    const body = document.getElementById("article-body");
+    const paragraphs = lang === "ru" ? bodyRU : bodyEN;
+    body.innerHTML = paragraphs.map(p => "<p>" + p + "</p>").join("");
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.lang === lang);
+    });
+    localStorage.setItem("atisaf-lang", lang);
+}
+
+const savedLang = localStorage.getItem("atisaf-lang") || "en";
+applyLang(savedLang);
+
+document.querySelectorAll(".lang-btn").forEach(btn => {
+    btn.addEventListener("click", () => applyLang(btn.dataset.lang));
+});
+</script>
 </body>
 </html>
