@@ -20,69 +20,14 @@
             --accent: #A08B5A;
             --muted:  rgba(240, 234, 224, 0.4);
             --line:   #2A2520;
-            --serif:  'Cormorant Garant', Georgia, serif;
-            --sans:   'Inter', system-ui, sans-serif;
-        }
-        *, *::before, *::after { box
-
-cat > notes/index.html << 'ENDOFFILE'
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Field Notes from ATISAF — observations on consciousness, decision-making, perception, and structural reality.">
-    <link rel="canonical" href="https://atisaf.com/notes/">
-    <meta property="og:title" content="Field Notes | ATISAF">
-    <meta property="og:url" content="https://atisaf.com/notes/">
-    <title>Field Notes | ATISAF</title>
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg:     #0A0906;
-            --bg-alt: #0F0D0B;
-            --text:   #F0EAE0;
-            --accent: #A08B5A;
-            --muted:  rgba(240, 234, 224, 0.4);
-            --line:   #2A2520;
-            --serif:  'Cormorant Garant', Georgia, serif;
-            --sans:   'Inter', system-ui, sans-serif;
-        }
-        *, *::before, *::after { box
-cat > notes/index.html << 'ENDOFFILE'
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Field Notes from ATISAF — observations on consciousness, decision-making, perception, and structural reality.">
-    <link rel="canonical" href="https://atisaf.com/notes/">
-    <meta property="og:title" content="Field Notes | ATISAF">
-    <meta property="og:url" content="https://atisaf.com/notes/">
-    <title>Field Notes | ATISAF</title>
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg:     #0A0906;
-            --bg-alt: #0F0D0B;
-            --text:   #F0EAE0;
-            --accent: #A08B5A;
-            --muted:  rgba(240, 234, 224, 0.4);
-            --line:   #2A2520;
-            --serif:  'Cormorant Garant', Georgia, serif;
-            --sans:   'Inter', system-ui, sans-serif;
+            --serif:  "Cormorant Garant", Georgia, serif;
+            --sans:   "Inter", system-ui, sans-serif;
         }
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { background-color: #0A0906; }
         body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: var(--sans);
+            color: #F0EAE0;
+            font-family: "Inter", system-ui, sans-serif;
             font-size: 16px;
             line-height: 1.7;
             font-weight: 300;
@@ -101,45 +46,44 @@ cat > notes/index.html << 'ENDOFFILE'
             position: fixed;
             top: 28px;
             right: 32px;
-            font-family: var(--sans);
+            font-family: "Inter", system-ui, sans-serif;
             font-size: 11px;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--muted);
+            color: rgba(240,234,224,0.4);
             text-decoration: none;
             transition: color 0.3s;
         }
-        .nav-back:hover { color: var(--text); }
+        .nav-back:hover { color: #F0EAE0; }
         .container {
             max-width: 680px;
             margin: 0 auto;
             padding: 120px 32px 80px;
         }
         .page-label {
-            font-family: var(--sans);
             font-size: 10px;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: var(--accent);
+            color: #A08B5A;
             margin-bottom: 16px;
         }
         .page-title {
-            font-family: var(--serif);
+            font-family: "Cormorant Garant", Georgia, serif;
             font-size: clamp(2.4rem, 5vw, 3.6rem);
             font-weight: 300;
             line-height: 1.1;
-            color: var(--text);
+            color: #F0EAE0;
             margin-bottom: 24px;
         }
         .page-desc {
             font-size: 14px;
-            color: var(--muted);
+            color: rgba(240,234,224,0.4);
             line-height: 1.8;
             max-width: 480px;
         }
         .divider {
             border: none;
-            border-top: 1px solid var(--line);
+            border-top: 1px solid #2A2520;
             margin: 48px 0;
         }
         .category-section { margin-bottom: 48px; }
@@ -147,29 +91,29 @@ cat > notes/index.html << 'ENDOFFILE'
             font-size: 9px;
             letter-spacing: 0.25em;
             text-transform: uppercase;
-            color: var(--accent);
+            color: #A08B5A;
             margin-bottom: 24px;
         }
         .note-entry {
             padding: 28px 0;
-            border-bottom: 1px solid var(--line);
+            border-bottom: 1px solid #2A2520;
             text-decoration: none;
             display: block;
             transition: opacity 0.3s;
         }
-        .note-entry:first-of-type { border-top: 1px solid var(--line); }
+        .note-entry:first-of-type { border-top: 1px solid #2A2520; }
         .note-entry:hover { opacity: 0.7; }
         .note-title {
-            font-family: var(--serif);
+            font-family: "Cormorant Garant", Georgia, serif;
             font-size: 1.45rem;
             font-weight: 400;
-            color: var(--text);
+            color: #F0EAE0;
             line-height: 1.3;
             margin-bottom: 10px;
         }
         .note-excerpt {
             font-size: 13px;
-            color: var(--muted);
+            color: rgba(240,234,224,0.4);
             line-height: 1.7;
             margin-bottom: 12px;
         }
@@ -177,24 +121,24 @@ cat > notes/index.html << 'ENDOFFILE'
             font-size: 10px;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: var(--accent);
+            color: #A08B5A;
             opacity: 0.6;
         }
         .page-footer {
             margin-top: 80px;
             padding-top: 32px;
-            border-top: 1px solid var(--line);
+            border-top: 1px solid #2A2520;
             text-align: center;
         }
         .footer-link {
             font-size: 10px;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: var(--muted);
+            color: rgba(240,234,224,0.4);
             text-decoration: none;
             transition: color 0.3s;
         }
-        .footer-link:hover { color: var(--text); }
+        .footer-link:hover { color: #F0EAE0; }
     </style>
 </head>
 <body>
@@ -209,7 +153,6 @@ cat > notes/index.html << 'ENDOFFILE'
 <a href="https://atisaf.com/" class="nav-back">← atisaf.com</a>
 
 <div class="container">
-
     <header style="margin-bottom:64px;">
         <p class="page-label">ATISAF</p>
         <h1 class="page-title">Field Notes</h1>
@@ -230,7 +173,6 @@ cat > notes/index.html << 'ENDOFFILE'
     <footer class="page-footer">
         <a href="https://atisaf.com/" class="footer-link">← Return to ATISAF</a>
     </footer>
-
 </div>
 </body>
 </html>
